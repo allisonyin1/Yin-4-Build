@@ -1,0 +1,103 @@
+/* MOBILE FIRST STYLES */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: linen;
+}
+
+/* GRID LAYOUT */
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  background-color: lightblue;
+  padding: 15px;
+  text-align: center;
+}
+
+main {
+  grid-area: main;
+  padding: 15px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: lightgray;
+  text-align: center;
+  padding: 10px;
+}
+
+/* FLEXBOX NAVBAR */
+.nav-bar {
+  display: flex;
+  flex-direction: column; /* mobile */
+  list-style: none;
+  padding: 0;
+}
+
+.nav-bar li {
+  margin: 5px 0;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: black;
+}
+
+/* CARD FLEXBOX */
+.card-container {
+  display: flex;
+  flex-direction: column; /* mobile */
+  gap: 15px;
+}
+
+.card {
+  border: 1px solid black;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+/* MEDIA QUERY (TABLET+) */
+@media (min-width: 768px) {
+
+  .nav-bar {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .card-container {
+    flex-direction: row;
+  }
+
+  .card {
+    flex: 1;
+  }
+
+}
+
+/* MEDIA QUERY (DESKTOP) */
+@media (min-width: 1024px) {
+
+  body {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "header header"
+      "main main"
+      "footer footer";
+  }
+
+}
